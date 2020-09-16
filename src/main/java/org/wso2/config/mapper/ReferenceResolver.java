@@ -227,6 +227,9 @@ public class ReferenceResolver {
                     PLACEHOLDER_SUFFIX);
             if (secretRefs != null) {
                 for (String secretRef : secretRefs) {
+                    if(secrets == null){
+                        secrets.put(secretRef,"");
+                    }
                     Object secretValue = secrets.get(secretRef);
                     if (secretValue == null) {
                         throw new ConfigParserException("Secret references can't be resolved for " + secretRef);
