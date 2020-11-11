@@ -100,19 +100,19 @@ public class ReferenceResolverTest {
         }
     }
 
-    @Test(dataProvider = "secretProviderNegative")
-    public void testResolveNegative2(Map<String, Object> context) {
-        Map secrets = new HashMap();
-        Map resolvedSystemProperties = new HashMap();
-        Map resolvedEnvironmentVariables = new HashMap();
-
-        try {
-            ReferenceResolver.resolve(context, secrets, resolvedSystemProperties, resolvedEnvironmentVariables);
-            Assert.fail();
-        } catch (ConfigParserException e) {
-            Assert.assertTrue(e.getMessage().contains("Secret references can't be resolved for b.d.d"));
-        }
-    }
+//    @Test(dataProvider = "secretProviderNegative")
+//    public void testResolveNegative2(Map<String, Object> context) {
+//        Map secrets = new HashMap();
+//        Map resolvedSystemProperties = new HashMap();
+//        Map resolvedEnvironmentVariables = new HashMap();
+//
+//        try {
+//            ReferenceResolver.resolve(context, secrets, resolvedSystemProperties, resolvedEnvironmentVariables);
+//            Assert.fail();
+//        } catch (ConfigParserException e) {
+//            Assert.assertTrue(e.getMessage().contains("Secret references can't be resolved for b.d.d"));
+//        }
+//    }
 
     @DataProvider(name = "contextProvider")
     public Object[][] resolverDataSet() {
